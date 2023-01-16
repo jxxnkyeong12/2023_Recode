@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:annotation-config></context:annotation-config>
+	<context:property-placeholder location= 'classpath:db/db.properties'/>
+
+<bean id = 'dbcp_board' class = 'org.apache.commons.dbcp.BasicDataSource'>
+  	<property name="driverClassName" value = '${spring.datasource.driver-class-name}'/>
+	<property name="url" value ='${spring.datasource.url}'/>
+	<property name="username" value ='${spring.datasource.username}'/>
+	<property name="password" value ='${spring.datasource.password}'/>
+  
+</bean>
+
+ <bean id='factory' class = 'org.mybatis.spring.SqlSessionFactoryBean'>
+	<property name="dataSource"  ref= 'dbcp_board'></property>
+	<property name="mapperLocations" value = 'classpath:/sqlmap/*-mapper.xml'></property>
+</bean>
+
+ <bean class ='org.mybatis.spring.SqlSessionTemplate'>
+	<constructor-arg name = "sqlSessionFactory" ref ='factory'/> <!-- 생성자로 만들어주기 -->
+	<qualifier value="test_board_jin"/> 
+
+</bean> 
+
+
+</beans>
