@@ -50,7 +50,7 @@ ORDER BY NAME
 
 4. 중성화 여부 파악하기
 보호소의 동물이 중성화되었는지 아닌지 파악하려 합니다. 중성화된 동물은 SEX_UPON_INTAKE 컬럼에 'Neutered' 또는 'Spayed'라는 단어가 들어있습니다. 동물의 아이디와 이름, 중성화 여부를 아이디 순으로 조회하는 SQL문을 작성해주세요. 이때 중성화가 되어있다면 'O', 아니라면 'X'라고 표시해주세요.
-
+① CASE WHEN THEN END 방법
 
 SELECT  ANIMAL_ID
         , NAME  
@@ -62,4 +62,15 @@ SELECT  ANIMAL_ID
 FROM  ANIMAL_INS    
 
 
-- case 문 안쪽에 조건문 넣을 때, like ‘%%’이렇게 해주기
+- case 문 안쪽에 조건문 넣을 때, 전체를 감싸주고 like ‘%%’이렇게 해주기
+
+
+② if문 써서 조건문 넣어주기
+
+SELECT   ANIMAL_ID
+        , NAME  
+        , IF(SEX_UPON_INTAKE LIKE '%Neutered%' OR SEX_UPON_INTAKE LIKE '%Spayed%', 'O', 'X') AS 중성화
+FROM  ANIMAL_INS    
+
+
+- IF(‘조건문’, ‘참’, ‘거짓’)
