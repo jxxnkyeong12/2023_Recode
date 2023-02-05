@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<fieldset>
+		<legend>등록 정보</legend>
+			<ul>
+				<li>
+					<label for = "member">참여인원<small>(최대 10명)</small></label>
+						<input type = "number" autofocus required id = "member" name = "member" value = "1" min = "0" max = "10"  step="1">
+				</li>
+				<li>
+					<label for = "stuffs">지원물품<small>(1인당 5개)</small></label>
+						<input type = "number"  id = "stuffs" value = "1" min = "0" max = "50" step = "5">
+				</li>
+				<li>
+					<label for = "satis">희망 단계<small>(상, 중, 하)</small></label>
+					<input type = "range" id = "satis" value = "1" min = "0" max = "3" step = "1">
+				</li>
+			</ul>
+			
+	</fieldset>
+	
+	<fieldset>
+		<legend>신청 과목</legend>
+				<p>이 달에 신청할 과목을 선택하세요 (1과목만 가능)</p>
+				<label><input type= "radio" id = "subject"  name = "subject"  value = "speaking" checked="checked">회화</label>
+				<label><input type= "radio" id = "subject"  name = "subject"  value = "grammar" >문법</label>
+				<label><input type= "radio" id = "subject"  name = "subject"  value = "writing" >작문</label>
+	
+	</fieldset>
+	<fieldset>
+		<legend>메일링</legend>
+				<p>메일로 받고 싶은 뉴스 주제를 선택해 주세요<small>(복수 선택 가능)</small></p>
+				<label><input type= "checkbox" id = "mailng1"  name = "mailng1"  value = "news" >해외 단신</label>
+				<label><input type= "checkbox" id = "mailng2"  name = "mailng2"  value = "dialog" >5분 회화</label>
+				<label><input type= "checkbox" id = "mailng3"  name = "mailng3"  value = "pops" >모닝팝스</label>
+	</fieldset>
+	<fieldset>
+		<legend>과 티셔츠 설문</legend>
+				<p>올해 과 티(T)를 만들려고 합니다. 원하는 색상을 추천해 주세요.</p>
+				<label>선호 색상 : <input type  = "color" value = "#00ff00"></label>
+	</fieldset>
+		<fieldset>
+		<legend>로그인</legend>
+				<label>아이디 : <input type= "text" id = "id" name = "id" size = "10"></label>
+				<label>비번 : <input type= "password" id = "password" name = "password" size = "10"></label>
+				<input type = "image"  src = "img/login.jpg" alt = "로그인">
+	</fieldset>
+	
+		<fieldset>
+		<legend>button 넣기</legend>
+				<input type = "button" value = "새창 열기" onclick="window.open()">
+				<input type = "button" value = "닫기" onclick="window.close()">
+	</fieldset>
+</body>
+</html>
