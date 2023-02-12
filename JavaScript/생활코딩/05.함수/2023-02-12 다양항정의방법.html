@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		//함수에 대한 정의 부분이 좌항에 있는 numbering이라는 변수에 대입된것이다
+
+		numbering = function() {
+			i= 0;
+			while(i <10){
+				document.write(i);
+				i+=1;
+			}
+		}
+	//변수 이름 뒤에다가 함수 호출 처럼불러주면 아래 주석같은 것이라고 생각하면 된다
+	numbering();
+/*
+	function numbering(){
+	i = 0;
+		while(i<10){
+			documnet.write(i);
+			i +=1;
+		}
+	}
+*/
+	//익명 함수 : 정의와 동시에 호출 -> 함수명이 보면 없잖아 . 그래서 익명함수
+	(function () {
+		i= 0;
+			while(i <10){
+				document.write(i);
+				i+=1;
+			}
+	})(); 
+
+
+	</script>
+</body>
+</html>
